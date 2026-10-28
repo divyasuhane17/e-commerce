@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: book-service
+              uri: lb://book-service
+              predicates:
+                - Path=/book/**
+            - id: payment-service
+              uri: lb://payment-service
+              predicates:
+                - Path=/payment/**

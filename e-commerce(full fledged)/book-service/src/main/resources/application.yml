@@ -1,0 +1,11 @@
+server:
+  port: 8081   # Payment service apna port
+
+spring:
+  application:
+    name: book-service   # Eureka me register hoga
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
